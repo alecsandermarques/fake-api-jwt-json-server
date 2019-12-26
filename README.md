@@ -12,18 +12,20 @@ $ npm run start-auth
 ```
 
 Might need to run
+
 ```
 npm audit fix
 ```
 
-## How to login/register?
+## How to login?
 
-You can login/register by sending a POST request to
+You can sessions by sending a POST request to
 
 ```
-POST http://localhost:8000/auth/login
-POST http://localhost:8000/auth/register
+POST http://localhost:3333/sessions
+POST http://localhost:3333/auth/register
 ```
+
 with the following data
 
 ```
@@ -40,7 +42,6 @@ You should receive an access token with the following format
    "access_token": "<ACCESS_TOKEN>"
 }
 ```
-
 
 You should send this authorization with any request to the protected endpoints
 
