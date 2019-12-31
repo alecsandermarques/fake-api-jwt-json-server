@@ -2,7 +2,7 @@
 
 A Fake REST API using json-server with JWT authentication.
 
-Implemented End-points: login,register
+Implemented endpoint: login,register
 
 ## Install
 
