@@ -1,6 +1,1 @@
-{
-  "users": [
-    { "id": "87ec4cd1-3a85-4ae9-b7e0-5cd16a3c20a4", "email": "admin@admin.com", "name": "Tac", "password": "admin" },
-    { "id": "deb44471-61c0-436c-9abb-1f6ec8a97164", "email": "alecs@admin.com", "name": "Alecsander", "password": "admin" }
-  ]
-}
+{"users":[{"id":"87ec4cd1-3a85-4ae9-b7e0-5cd16a3c20a4","email":"admin@admin.com","name":"Tac","password":"admin"},{"id":"fea9c75e-2d39-4320-86d2-08253873af71","email":"admin111@admin.com","name":"Alecsander","password":"admin"}]}
