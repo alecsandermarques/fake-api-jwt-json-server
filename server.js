@@ -31,7 +31,7 @@ server.post("/auth/register", (req, res) => {
   console.log(req.body);
 
   const { email, password, name } = req.body;
-  const user = getUser(email, password);
+  let user = getUser(email, password);
 
   if (user) {
     const status = 401;
@@ -52,12 +52,14 @@ server.post("/auth/register", (req, res) => {
     data = JSON.parse(data.toString());
 
     //Add new user
-    data.users.push({
+    user = {
       id: uuidv4(),
       email: email,
       name: name,
       password: password
-    });
+    };
+
+    data.users.push(user);
 
     fs.writeFile("./users.json", JSON.stringify(data), (err, result) => {
       if (err) {
@@ -67,11 +69,12 @@ server.post("/auth/register", (req, res) => {
         return;
       }
     });
-  });
 
-  // Create token for new user
-  const access_token = createToken(email, name);
-  res.status(200).json({ access_token });
+    // Create token for new user
+    const access_token = createToken(email, name);
+    delete user.password;
+    res.status(200).json({ access_token, user });
+  });
 });
 
 // Login to one of the users from ./users.json
@@ -82,6 +85,8 @@ server.post("/auth/login", (req, res) => {
 
   const user = getUser(email, password);
 
+  delete user.password;
+
   if (!user) {
     const status = 401;
     const message = "Incorrect email or password";
@@ -91,7 +96,8 @@ server.post("/auth/login", (req, res) => {
 
   const access_token = createToken(user.email, user.name);
   console.log("Access Token:" + access_token);
-  res.status(200).json({ access_token });
+
+  res.status(200).json({ access_token, user });
 });
 
 server.use(/^(?!\/auth).*$/, (req, res, next) => {
