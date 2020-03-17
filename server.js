@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const server = jsonServer.create();
 const router = jsonServer.router("./database.json");
 const userdb = JSON.parse(fs.readFileSync("./users.json", "UTF-8"));
-const uuidv4 = require("uuid/v4"); // <== NOW DEPRECATED!
+const uuidv4 = require("uuid/v4");
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
@@ -58,6 +58,7 @@ server.post("/auth/register", (req, res) => {
       name: name,
       password: password
     });
+
     fs.writeFile("./users.json", JSON.stringify(data), (err, result) => {
       if (err) {
         const status = 401;
