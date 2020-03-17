@@ -1,28 +1,24 @@
 {
-  "teams": [
+  "lane": [
     {
-      "id": 1,
-      "name": "Rocketseat",
-      "created_at": "2018-12-11 15:38:19",
-      "slug": "rocketseat",
-      "updated_at": "2018-12-11 15:38:19",
-      "user_id": 1,
-      "pivot": {
-        "team_id": 1,
-        "user_id": 1
-      }
+      "id": "EUFHRSIUHFSIRUF",
+      "name": "Todo"
     },
     {
-      "id": 2,
-      "name": "Barreira",
-      "created_at": "2018-12-11 15:39:14",
-      "slug": "barreira",
-      "updated_at": "2018-12-11 15:39:14",
-      "user_id": 1,
-      "pivot": {
-        "team_id": 1,
-        "user_id": 1
-      }
+      "id": "IAUEFHIAUEFHIUAEF",
+      "name": "Doing"
+    },
+    {
+      "id": "UYEFUYEGUQYGFUYA",
+      "name": "Done"
+    }
+  ],
+  "task": [
+    {
+      "id": "AEUFIHAEUIF",
+      "name": "Nome da tarefa",
+      "description": "Bla bla bla bla",
+      "laneId": "EUFHRSIUHFSIRUF"
     }
   ]
 }

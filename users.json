@@ -1,8 +1,1 @@
-{
-  "users": [
-    { "id": 1, "email": "admin@admin.com", "password": "admin" },
-    { "id": 2, "email": "user@user.com", "password": "user" },
-    { "id": 3, "email": "admin2@admin.com", "password": "admin" },
-    { "id": 4, "email": "admin3@admin.com", "password": "admin" }
-  ]
-}
+{"users":[{"id":"87ec4cd1-3a85-4ae9-b7e0-5cd16a3c20a4","email":"admin@admin.com","name":"Tac","password":"admin"}]}
